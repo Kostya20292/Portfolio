@@ -1,1 +1,58 @@
 // main: ../style.less
+
+.footer {
+  background-color: @black;
+  padding: 1rem 0;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+}
+
+.footer__social-link {
+  text-decoration: none;
+  margin-right: 1.2rem;
+}
+
+.footer__social-img {
+  width: 24px;
+  height: 24px;
+}
+
+.footer__nav {
+  font-size: 0.94rem;
+  display: flex;
+  align-items: center;
+}
+
+.footer__nav-link {
+  color: #bbbbcc;
+  text-decoration: none;
+  margin-left: 1.5rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &--btn {
+    border: 1px solid @gray-light;
+    border-radius: 20px;
+    padding: 0.5rem 1.4rem;
+    line-height: 1.1;
+    transition: color 0.2s linear, background-color 0.2s linear,
+      border-color 0.2s linear;
+
+    &:hover {
+      text-decoration: none;
+      background-color: #bbbbcc;
+      color: @black;
+      border-color: #bbbbcc;
+    }
+  }
+}
