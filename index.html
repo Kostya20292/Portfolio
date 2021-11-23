@@ -10,8 +10,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,700;1,300&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" defer></script>
+  <script src="js/slick.min.js" defer></script>
+  <script src="js/main.js" defer></script>
 </head>
-<body class="no-scroll">
+<body>
   
   <header class="header">
     <div class="container">
@@ -30,7 +33,7 @@
           <a class="nav__link" href="#">About Me</a>
           <a class="nav__link" href="#">Blog</a>
           <a class="nav__link" href="#">Contant</a>
-          <a class="nav__link nav__link--btn" href="#">Hire Me</a>
+          <a class="nav__link nav__link--btn" href="#" data-modal="#modal_hire_me">Hire Me</a>
         </nav>
       </div>
     </div>
@@ -63,8 +66,8 @@
               <img src="img/twitter.png" alt="social">
             </a>
           </div>
-          <a href="#" class="btn">Hire Me</a>
-          <button type="button" class="btn">See My Resume</button>
+          <a href="#" class="btn" data-modal="#modal_hire_me">Hire Me</a>
+          <button type="button" class="btn" data-modal="#modal_resume">See My Resume</button>
         </div>
         <div class="intro__photo">
           <img src="img/photo.png" alt="photo">
@@ -76,17 +79,17 @@
   <section class="works">
     <div class="container">
       <div class="works__nav">
-        <a href="#" class="works__nav-link">All</a>
-        <a href="#" class="works__nav-link">App</a>
-        <a href="#" class="works__nav-link">Website</a>
-        <a href="#" class="works__nav-link">Interaction</a>
+        <a href="#" class="works__nav-link" data-filtet="all">All</a>
+        <a href="#" class="works__nav-link" data-filtet="app">App</a>
+        <a href="#" class="works__nav-link" data-filtet="website">Website</a>
+        <a href="#" class="works__nav-link" data-filtet="interaction">Interaction</a>
       </div>
       <div class="portfolio">
-        <div class="portfolio__col">
-          <div class="work">
+        <div class="portfolio__col" data-cat="app">
+          <div class="work" data-modal="#modal_project_1">
             <img src="http://dummyimage.com/370x300" alt="portfolio" class="work__image">
             <div class="work__content">
-              <span class="work__cat">Category</span>
+              <span class="work__cat">App</span>
               <div class="work__title">
                 <span>Project title</span>
                 <time class="work__date" datetime="2021-09-26">2021</time>
@@ -94,11 +97,11 @@
             </div>
           </div>
         </div>
-        <div class="portfolio__col">
-          <div class="work">
+        <div class="portfolio__col" data-cat="website">
+          <div class="work" data-modal="#modal_project_1">
             <img src="http://dummyimage.com/370x300" alt="portfolio" class="work__image">
             <div class="work__content">
-              <span class="work__cat">Category</span>
+              <span class="work__cat">Website</span>
               <div class="work__title">
                 <span>Project title</span>
                 <time class="work__date" datetime="2021-09-26">2021</time>
@@ -106,11 +109,11 @@
             </div>
           </div>
         </div>
-        <div class="portfolio__col">
-          <div class="work">
+        <div class="portfolio__col" data-cat="interaction">
+          <div class="work" data-modal="#modal_project_1">
             <img src="http://dummyimage.com/370x300" alt="portfolio" class="work__image">
             <div class="work__content">
-              <span class="work__cat">Category</span>
+              <span class="work__cat">Interaction</span>
               <div class="work__title">
                 <span>Project title</span>
                 <time class="work__date" datetime="2021-09-26">2021</time>
@@ -118,11 +121,11 @@
             </div>
           </div>
         </div>
-        <div class="portfolio__col">
-          <div class="work">
+        <div class="portfolio__col" data-cat="website">
+          <div class="work" data-modal="#modal_project_1">
             <img src="http://dummyimage.com/370x300" alt="portfolio" class="work__image">
             <div class="work__content">
-              <span class="work__cat">Category</span>
+              <span class="work__cat">Website</span>
               <div class="work__title">
                 <span>Project title</span>
                 <time class="work__date" datetime="2021-09-26">2021</time>
@@ -130,11 +133,11 @@
             </div>
           </div>
         </div>
-        <div class="portfolio__col">
-          <div class="work">
+        <div class="portfolio__col" data-cat="interaction">
+          <div class="work" data-modal="#modal_project_1">
             <img src="http://dummyimage.com/370x300" alt="portfolio" class="work__image">
             <div class="work__content">
-              <span class="work__cat">Category</span>
+              <span class="work__cat">Interaction</span>
               <div class="work__title">
                 <span>Project title</span>
                 <time class="work__date" datetime="2021-09-26">2021</time>
@@ -142,11 +145,11 @@
             </div>
           </div>
         </div>
-        <div class="portfolio__col">
-          <div class="work">
+        <div class="portfolio__col" data-cat="app">
+          <div class="work" data-modal="#modal_project_1">
             <img src="http://dummyimage.com/370x300" alt="portfolio" class="work__image">
             <div class="work__content">
-              <span class="work__cat">Category</span>
+              <span class="work__cat">App</span>
               <div class="work__title">
                 <span>Project title</span>
                 <time class="work__date" datetime="2021-09-26">2021</time>
@@ -154,11 +157,11 @@
             </div>
           </div>
         </div>
-        <div class="portfolio__col">
-          <div class="work">
+        <div class="portfolio__col" data-cat="app">
+          <div class="work" data-modal="#modal_project_1">
             <img src="http://dummyimage.com/370x300" alt="portfolio" class="work__image">
             <div class="work__content">
-              <span class="work__cat">Category</span>
+              <span class="work__cat">App</span>
               <div class="work__title">
                 <span>Project title</span>
                 <time class="work__date" datetime="2021-09-26">2021</time>
@@ -166,11 +169,11 @@
             </div>
           </div>
         </div>
-        <div class="portfolio__col">
-          <div class="work">
+        <div class="portfolio__col" data-cat="interaction">
+          <div class="work" data-modal="#modal_project_1">
             <img src="http://dummyimage.com/370x300" alt="portfolio" class="work__image">
             <div class="work__content">
-              <span class="work__cat">Category</span>
+              <span class="work__cat">Interaction</span>
               <div class="work__title">
                 <span>Project title</span>
                 <time class="work__date" datetime="2021-09-26">2021</time>
@@ -178,11 +181,11 @@
             </div>
           </div>
         </div>
-        <div class="portfolio__col">
-          <div class="work">
+        <div class="portfolio__col" data-cat="website">
+          <div class="work" data-modal="#modal_project_1">
             <img src="http://dummyimage.com/370x300" alt="portfolio" class="work__image">
             <div class="work__content">
-              <span class="work__cat">Category</span>
+              <span class="work__cat">Website</span>
               <div class="work__title">
                 <span>Project title</span>
                 <time class="work__date" datetime="2021-09-26">2021</time>
@@ -212,8 +215,8 @@
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam praesentium labore possimus explicabo dignissimos fuga. Iusto quae nulla sequi, corrupti neque facilis est dolores dolorum minima. Eligendi rem nobis aliquam?</p>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam praesentium labore possimus explicabo dignissimos fuga. Iusto quae nulla sequi, corrupti neque facilis est dolores dolorum minima. Eligendi rem nobis aliquam?</p>
           </div>
-          <a href="#" class="btn">Hire Me</a>
-          <button type="button" class="btn">See My Resume</button>
+          <a href="#" class="btn" data-modal="#modal_hire_me">Hire Me</a>
+          <button type="button" class="btn" data-modal="#modal_resume">See My Resume</button>
         </div>
       </div>
     </div>
@@ -343,20 +346,27 @@
           <a href="" class="footer__nav-link">About Me</a>
           <a href="" class="footer__nav-link">Blog</a>
           <a href="" class="footer__nav-link">Contact</a>
-          <a href="" class="footer__nav-link footer__nav-link--btn">Hire Me</a>
+          <a href="" class="footer__nav-link footer__nav-link--btn" data-modal="#modal_hire_me">Hire Me</a>
         </nav>
       </div>
     </div>
   </footer>
 
-  <div class="modal" style="display: none">
+  <div class="modal" id="modal_project_1">
     <div class="modal__dialog">
-      <button type="button" class="modal__close">
+      <button type="button" class="modal__close" data-close>
         <img src="img/modal-close.png" alt="close">
       </button>
       <div class="modal-work">
         <div class="modal-work__preview">
-          <img src="http://dummyimage.com/790x780" alt="preview" class="modal-work__photo">
+          <div data-slider="slick">
+            <div>
+              <img src="http://dummyimage.com/790x780" alt="preview" class="modal-work__photo">
+            </div>
+            <div>
+              <img src="http://dummyimage.com/790x780/333" alt="preview" class="modal-work__photo">
+            </div>
+          </div>
         </div>
         <div class="modal-work__content">
           <div class="modal-work__header">
@@ -373,10 +383,10 @@
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque autem suscipit asperiores. Officiis libero laboriosam laborum quas nobis maiores dolor nam deserunt sequi illo soluta, at in officia debitis magni dolorum vel a repellat delectus ex architecto. Aliquid aspernatur expedita fuga, quasi ut ducimus minus quisquam excepturi natus temporibus tempore, accusamus totam rerum non mollitia molestiae labore aliquam, blanditiis id nihil vitae tempora.</p>
           </div>
           <div class="modal-work__footer">
-            <button class="modal-work__btn" type="button">
+            <button class="modal-work__btn slickPrev" type="button">
               <img src="img/back.svg" alt="arrow">
               Previous</button>
-            <button class="modal-work__btn" type="button">
+            <button class="modal-work__btn slickNext" type="button">
               Next
               <img src="img/next.svg" alt="arrow">
             </button>
@@ -386,13 +396,13 @@
     </div>
   </div>
 
-  <div class="modal">
+  <div class="modal" id="modal_resume">
     <div class="modal__dialog">
-      <button type="button" class="modal__close">
+      <button type="button" class="modal__close" data-close>
         <img src="img/modal-close.png" alt="close">
       </button>
       <div class="modal__content">
-        <h3 class="modal__title">Resume</h3>
+        <h3 class="modal__title text-center">Resume</h3>
         <div class="text-center">
           <a class="btn btn--thin" href="#">Download Pdf</a>
           <a class="btn btn--thin" href="#">Print</a>
@@ -492,5 +502,37 @@
     </div>
   </div>
 
+  <div class="modal" id="modal_hire_me">
+    <div class="modal__dialog modal__dialog--sm">
+      <button type="button" class="modal__close" data-close>
+        <img src="img/modal-close.png" alt="close">
+      </button>
+      <div class="contact">
+        <div class="contact__left">
+          <h3 class="modal__title mb-0">Let's Talk!</h3>
+          <h4 class="modal__subtitle">Call Me Or Send Me A Request</h4>
+          <ul class="contact__info">
+            <li class="contact__info-item">(200) 100 3000</li>
+            <li>kostya@gmail.com</li>
+          </ul>
+          <form class="form" action="/" method="post">
+            <div class="form__group">
+              <label for="input-email" class="form__label">Adress e-mail</label>
+              <input type="text" name="input-email" class="form__input" placeholder="Adress e-mail" id="input-email">
+            </div>
+            <div class="form__group">
+              <label for="input-text" class="form__label">Request</label>
+              <textarea name="input-text" id="input-text" class="form__textarea" placeholder="Type Your Request"></textarea>
+            </div>
+            <div class="text-right">
+              <button type="submit" class="btn">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+  
 </body>
 </html>
