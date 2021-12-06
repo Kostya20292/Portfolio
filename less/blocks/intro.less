@@ -1,22 +1,43 @@
 // main: ../style.less
 
+.intro {
+  @media @mobile {
+    margin-top: 100px;
+  }
+}
+
 .intro__inner {
   display: flex;
   border-bottom: 1px solid fade(@gray, 30%);
-  padding-bottom: 120px;
-  padding-top: 100px;
+  padding-top: 6.6rem;
+  padding-bottom: 8rem;
   background: url("../img/symbols.png") right bottom no-repeat;
   position: relative;
+
+  @media @tablet {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    background-size: 400px auto;
+  }
 }
 
 .intro__content {
   width: 50%;
+
+  @media @mobile {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .intro__subtitle {
   font-size: 2.13rem;
   color: @black;
   font-weight: 200;
+
+  @media @tablet {
+    font-size: 1.5rem;
+  }
 }
 
 .intro__title {
@@ -24,6 +45,10 @@
   color: @black;
   font-weight: 700;
   margin-bottom: 5px;
+
+  @media @tablet {
+    font-size: 2rem;
+  }
 }
 
 .intro__text {
@@ -38,4 +63,14 @@
   bottom: -1px;
   right: 0;
   z-index: 1;
+
+  @media @mobile {
+    display: none;
+  }
+}
+
+.intro__photo img {
+  @media @tablet {
+    width: 350px;
+  }
 }

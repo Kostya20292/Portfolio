@@ -65,6 +65,10 @@
   color: @black;
   font-weight: 700;
   margin-bottom: 3.6rem;
+
+  @media @mobile-sm {
+    font-size: 2rem;
+  }
 }
 
 .modal__subtitle {
@@ -72,4 +76,10 @@
   font-size: 1.06rem;
   color: @black;
   font-weight: 400;
+}
+
+@media @tablet {
+  #modal_project_1 {
+    display: none;
+  }
 }
